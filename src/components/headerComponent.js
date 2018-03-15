@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import Input from './inputComponent'
+
+import Input from './../containers/inputContainer'
 
 class Header extends Component {
 
-  render() {
+  render () {
     return (
-      <header className="myHeader">
+      <header className="headerApp">
         <Input />
       </header>
     )

@@ -5,7 +5,7 @@ import List from './listComponent'
 
 class Home extends Component {
 
-  render() {
+  render () {
     return (
       <div>
         <Header />

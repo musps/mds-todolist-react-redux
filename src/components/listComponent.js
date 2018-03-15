@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Item from './itemComponent'
+import Item from './../containers/itemContainer'
 
 class List extends Component {
 
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
+  render () {
     return (
-      <div className="myList">
+      <div className="list-group">
         {this.props.store.todoList.map((item, index) => (
           <Item key={index} item={item} />
         ))}

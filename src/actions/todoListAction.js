@@ -1,13 +1,13 @@
-export function create(value) {
+export const create = value => {
   return {
     'type': 'CREATE',
-    'value': value
+    value
   }
 }
 
-export function remove(id) {
+export const remove = id => {
   return {
     'type': 'REMOVE',
-    'id': id
+    id
   }
 }

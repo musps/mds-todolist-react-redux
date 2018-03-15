@@ -1,26 +1,27 @@
-let _todos = []
+import moment from 'moment'
+
+const _todos = []
 let _nextId = 0
 
-function newTodo(action) {
+const newTodo = action => {
   _nextId ++;
 
   return {
     'id': _nextId,
+    'created_at': moment().format('MMMM Do YYYY, h:mm:ss a'),
     'value': action.value
   }
 }
 
-function removeItem(state, action) {
-  return state.filter(item => {
-    return item.id !== action.id
-  })
+const removeItem = (state, action) => {
+  return state.filter(item => item.id !== action.id)
 }
 
-function todos(state = _todos, action) {
+const todos = (state = _todos, action) => {
 
   switch (action.type) {
     case 'CREATE':
-      return [...state, newTodo(action)]
+      return [newTodo(action), ...state]
     case 'REMOVE':
       return removeItem(state, action)
     default:

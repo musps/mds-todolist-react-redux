@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 
-import Home from './components/homeComponent'
-import ItemAlone from './components/itemAloneComponent'
+import Header from './components/headerComponent'
+import ListComponent from './components/listComponent'
+import Item from './components/itemComponent'
+
 
 class App extends Component {
 
-  render() {
+  render () {
     return (
       <div className="App">
-        <Route path='/' exact component={Home} />
-        <Route path='/item/:id' component={ItemAlone} />
+        <Header />
+
+        <div className="containerApp">
+          <div className="left">
+            <ListComponent />
+          </div>
+          <div className="right">
+            <Route path='/item/:id' component={Item} />
+          </div>
+        </div>
+
       </div>
     );
   }

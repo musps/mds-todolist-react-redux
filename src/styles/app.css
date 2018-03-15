@@ -3,29 +3,25 @@ body {
   border: 0;
   margin: 0;
   padding: 0;
+  background-color: #AEA8D3;
+  font-family: 'Roboto', sans-serif;
 }
 
 .myHeader {
   width: 100%;
   height: 75px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid black
 }
 
 .myInput {
+  width: 100%;
   box-sizing: border-box;
-  width: 80%;
-  height: 65px;
-  margin: 5px 10%;
-  border: 0px;
-  padding: 7px;
-  background-color: #333;
-  color: white;
-  font-size: 16px;
+  padding: 0 7px;
 }
 
 .myList {
   width: 80%;
-  margin: 25px auto;
+  margin: 25px auto
 }
 
 .myItem {
@@ -35,5 +31,82 @@ body {
   background-color: red;
   margin: 10px 0 0 0;
   line-height: 45px;
+  padding: 0 7px
+}
+
+/***** GRID
+*/
+
+.containerApp {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px)
+}
+
+.containerApp > .left {
+  width: 100%;
+  max-width: 70%;
+  overflow-x: scroll
+}
+
+.containerApp > .right {
+  width: 100%;
+  max-width: 30%;
+  background-color: #E26A6A
+}
+
+.headerApp {
+  width: 100%;
+  height: 65px
+}
+
+.headerInput {
+  height: 65px !important
+}
+
+.cardAppItem {
+  margin: 10px 15px 0 15px;
+  text-decoration: none;
+  color: black
+}
+.cardAppItem:hover {
+  text-decoration: none;
+  color: black
+}
+
+.itemComponent {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemComponent > header {
+  height: 45px;
+  box-sizing: border-box;
   padding: 0 7px;
+  line-height: 45px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.itemComponent > .content {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 17px;
+  font-size: 16px;
+}
+
+.itemComponent > footer {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.itemComponent > footer > button {
+  flex-grow: 1;
+  border-radius: 0;
 }

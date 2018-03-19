@@ -4,16 +4,16 @@ import { List } from 'immutable'
 import { taskModel } from './../models/index'
 import { CREATE, REMOVE } from './../actions/todoListAction'
 
-const _todos = new List
+const _todos = List()
 let _nextId = 0
 
 const newTodo = action => {
+  _nextId ++;
   const task = new taskModel;
 
   task.id = _nextId
   task.created_at = moment().format('MMMM Do YYYY, h:mm:ss a')
   task.value = action.value
-  _nextId ++;
   return task
 }
 

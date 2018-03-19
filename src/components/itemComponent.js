@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import _ from 'lodash'
 
 import * as todoListAction from './../actions/todoListAction'
+import { taskModel } from './../models/index'
 
 class Item extends Component {
 
   state = {
-    item: {
-      id: null,
-      created_at: null,
-      value: null
-    }
+    item: new taskModel
   }
 
   constructor (props) {
@@ -34,7 +30,7 @@ class Item extends Component {
   }
 
   checkAndRender (id) {
-    const item = _.find(this.props.item.todoList, item => item.id === parseInt(id, 10))
+    const item = this.props.item.todoList.find(item => item.id === parseInt(id, 10))
 
     if (typeof item === 'undefined') {
       this.props.history.push('/')
@@ -48,10 +44,12 @@ class Item extends Component {
   btnCancel () {
     this.props.history.push('/')
   }
+
   btnRemove () {
     this.props.remove(this.state.item.id)
     this.btnCancel()
   }
+
   btnEdit () {
     // --> Not yet.
   }
